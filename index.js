@@ -12,7 +12,7 @@ const screens = [
   {
     title: "Portfolio Gallery — Mobile Experience",
     desc: "Mobile-first layout optimized for accessibility, readability, and performance.",
-    src: "images/portfolio-landing-mobile.png",
+    src: "images/gallery-landing-mobile.jpg",
   },
   {
     title: "Single Project Page — Desktop",
