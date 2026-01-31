@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Universo da Doçura — Gallery</title>
+
+    <!-- Open Graph / Link Preview -->
+    <meta property="og:title" content="Universo da Doçura — Gallery Preview" />
+    <meta
+      property="og:description"
+      content="A vanilla HTML, CSS, and JavaScript gallery documenting the design system and layout exploration for a professional portfolio, an in-progress WordPress project."
+    />
+    <meta
+      property="og:image"
+      content="https://morganejla.github.io/universo-gallery/img/og-universo-gallery.jpg"
+    />
+    <meta property="og:url" content="https://morganejla.github.io/universo-gallery/" />
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Gabarito:wght@400..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css" />
+  </head
+
+  <body>
+    <header class="topbar">
+      <div class="wrap topbar__inner">
+        <a class="brand" href="#">
+          <span class="brand__title">WordPress Portfolio</span>
+          <span class="brand__tag">Gallery Preview</span>
+        </a>
+
+        <nav class="topnav" aria-label="Primary">
+          <a class="topnav__link" href="#gallery">Screens</a>
+          <a class="topnav__link" href="#about">About</a>
+          <a
+            class="btn btn--accent"
+            href="
+            target="_blank"
+            rel="noreferrer"
+            >View Repo</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="wrap hero__inner">
+          <div class="hero__copy">
+            <h1>WordPress Portfolio Gallery</h1>
+            <p class="lede">
+              A static screenshot gallery of my in-progress WordPress build.
+              This lets me show layout, styling, and UX while the full site is in progress.
+            </p>
+
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="#gallery">Start Exploring</a>
+              <a class="btn btn--ghost" href="#about">What you’re seeing</a>
+            </div>
+
+            <div class="controls" role="search">
+              <label class="sr-only" for="search">Search screens</label>
+              <input
+                id="search"
+                type="search"
+                placeholder="Search"
+                autocomplete="off"
+              />
+            </div>
+          </div>
+
+          <div class="hero__card">
+            <p class="hero__cardTitle">Gallery Notes</p>
+            <ul class="hero__list">
+              <li>Real screenshots from the WP build</li>
+              <li>Styled to match the client's portfolio palette</li>
+              <li>Click any screen to open full-size</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="gallery">
+        <div class="wrap">
+          <div class="section__head">
+            <h2>Screens</h2>
+            <p class="section__sub">
+              A curated slice of the UI: Home, Figma design, mobile and desktop views of same pages.
+            </p>
+          </div>
+
+          <div id="grid" class="grid" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="section section--soft" id="about">
+        <div class="wrap about">
+          <div>
+            <h2>Why screenshots?</h2>
+            <p>
+              This Portfolio Site is a custom WordPress build still in active
+              development. Hosting a screenshot gallery lets me share how I built the site from a Figma Design with custom css, block editing, and Blocksy theme options.
+            </p>
+            <p>It’s basically a “museum exhibit” of the site.</p>
+          </div>
+
+       <div class="about__callout">
+        <p class="about__label">Palette</p>
+
+          <p class="about__swatches">
+            <span class="swatch swatch--base" title="Base White"></span>
+            <span class="swatch swatch--dark" title="Deep Blue"></span>
+            <span class="swatch swatch--primary" title="Hero Blue"></span>
+            <span class="swatch swatch--accent" title="Accent Gold"></span>
+            <span class="swatch swatch--alert" title="Crimson Accent"></span>
+          </p>
+
+        <p class="about__hint">
+          Clean white base + deep blue structure + hero blue highlights + gold accents + crimson emphasis.
+        </p>
+      </div>
+
+        </div>
+      </section>
+    </main>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <div class="lightbox__backdrop" data-close="true"></div>
+
+      <div
+        class="lightbox__panel"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Screenshot preview"
+      >
+        <button
+          class="lightbox__close"
+          type="button"
+          aria-label="Close"
+          data-close="true"
+        >
+          ✕
+        </button>
+
+        <div class="lightbox__head">
+          <div>
+            <p class="lightbox__kicker" id="lbKicker">Custom Designed Client WordPress Site</p>
+            <h3 class="lightbox__title" id="lbTitle">Title</h3>
+          </div>
+
+          <a
+            class="btn btn--ghost"
+            id="lbOpen"
+            href="#"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Open image
+          </a>
+        </div>
+
+        <img id="lbImg" src="" alt="" />
+        <p class="lightbox__desc" id="lbDesc"></p>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="wrap footer__inner">
+        <p>
+          © <span id="year"></span> Morgan Jones — Custom WordPress Site(Gallery Preview)
+
+        </p>
+        <p class="footer__muted">Built as a static GitHub Pages showcase.</p>
+      </div>
+    </footer>
+
+    <script src="index.js"></script>
+  </body>
+</html>
